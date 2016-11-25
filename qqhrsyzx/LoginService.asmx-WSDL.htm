@@ -1,0 +1,951 @@
+<html><head><meta http-equiv=Content-Type content='text/html; charset=utf-8'></head>
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="LogOut">
+        <s:complexType />
+      </s:element>
+      <s:element name="LogOutResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckUserLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="verifyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckUserLoginResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAdminLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPwd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="verifyCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAdminLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckAdminLoginResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserIsLogin">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckUserIsLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckUserIsLoginResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckAdminIsLogin">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckAdminIsLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAdminIsLoginResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBigClassByTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="templateId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="classTypeId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBigClassByTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBigClassByTemplateResult" type="tns:ArrayOfItemModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfItemModel">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ItemModel" nillable="true" type="tns:ItemModel" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ItemModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PkId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBigClassByS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="templateId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBigClassBySResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBigClassBySResult" type="tns:ArrayOfItemModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBigClassBySs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="templateId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBigClassBySsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBigClassBySsResult" type="tns:ArrayOfItemModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBigClassBySX">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="templateId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="searchName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="templates" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bigclassId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBigClassBySXResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBigClassBySXResult" type="tns:ArrayOfItemModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserByFilter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserByFilterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserByFilterResult" type="tns:ArrayOfItemModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserTrueNameByFilter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserTrueNameByFilterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserTrueNameByFilterResult" type="tns:ArrayOfItemModelTrueUserName" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfItemModelTrueUserName">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ItemModelTrueUserName" nillable="true" type="tns:ItemModelTrueUserName" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ItemModelTrueUserName">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="int" type="s:int" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="ArrayOfItemModel" nillable="true" type="tns:ArrayOfItemModel" />
+      <s:element name="ArrayOfItemModelTrueUserName" nillable="true" type="tns:ArrayOfItemModelTrueUserName" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LogOutSoapIn">
+    <wsdl:part name="parameters" element="tns:LogOut" />
+  </wsdl:message>
+  <wsdl:message name="LogOutSoapOut">
+    <wsdl:part name="parameters" element="tns:LogOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUserLogin" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckAdminLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckAdminLogin" />
+  </wsdl:message>
+  <wsdl:message name="CheckAdminLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckAdminLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUserIsLogin" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserIsLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckAdminIsLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckAdminIsLogin" />
+  </wsdl:message>
+  <wsdl:message name="CheckAdminIsLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckAdminIsLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassByTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBigClassByTemplate" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassByTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBigClassByTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBigClassByS" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBigClassBySResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBigClassBySs" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBigClassBySsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySXSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBigClassBySX" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySXSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBigClassBySXResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByFilterSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserByFilter" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByFilterSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserByFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTrueNameByFilterSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserTrueNameByFilter" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTrueNameByFilterSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserTrueNameByFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogOutHttpGetIn" />
+  <wsdl:message name="LogOutHttpGetOut" />
+  <wsdl:message name="CheckUserLoginHttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="userPwd" type="s:string" />
+    <wsdl:part name="verifyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CheckAdminLoginHttpGetIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="userPwd" type="s:string" />
+    <wsdl:part name="verifyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckAdminLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsLoginHttpGetIn" />
+  <wsdl:message name="CheckUserIsLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="CheckAdminIsLoginHttpGetIn" />
+  <wsdl:message name="CheckAdminIsLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassByTemplateHttpGetIn">
+    <wsdl:part name="templateId" type="s:string" />
+    <wsdl:part name="searchName" type="s:string" />
+    <wsdl:part name="classTypeId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassByTemplateHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfItemModel" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySHttpGetIn">
+    <wsdl:part name="templateId" type="s:string" />
+    <wsdl:part name="searchName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfItemModel" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySsHttpGetIn">
+    <wsdl:part name="templateId" type="s:string" />
+    <wsdl:part name="searchName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfItemModel" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySXHttpGetIn">
+    <wsdl:part name="templateId" type="s:string" />
+    <wsdl:part name="searchName" type="s:string" />
+    <wsdl:part name="templates" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="bigclassId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySXHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfItemModel" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByFilterHttpGetIn">
+    <wsdl:part name="searchName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByFilterHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfItemModel" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTrueNameByFilterHttpGetIn">
+    <wsdl:part name="searchName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTrueNameByFilterHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfItemModelTrueUserName" />
+  </wsdl:message>
+  <wsdl:message name="LogOutHttpPostIn" />
+  <wsdl:message name="LogOutHttpPostOut" />
+  <wsdl:message name="CheckUserLoginHttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="userPwd" type="s:string" />
+    <wsdl:part name="verifyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CheckAdminLoginHttpPostIn">
+    <wsdl:part name="userName" type="s:string" />
+    <wsdl:part name="userPwd" type="s:string" />
+    <wsdl:part name="verifyCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckAdminLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserIsLoginHttpPostIn" />
+  <wsdl:message name="CheckUserIsLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="CheckAdminIsLoginHttpPostIn" />
+  <wsdl:message name="CheckAdminIsLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassByTemplateHttpPostIn">
+    <wsdl:part name="templateId" type="s:string" />
+    <wsdl:part name="searchName" type="s:string" />
+    <wsdl:part name="classTypeId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassByTemplateHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfItemModel" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySHttpPostIn">
+    <wsdl:part name="templateId" type="s:string" />
+    <wsdl:part name="searchName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfItemModel" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySsHttpPostIn">
+    <wsdl:part name="templateId" type="s:string" />
+    <wsdl:part name="searchName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfItemModel" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySXHttpPostIn">
+    <wsdl:part name="templateId" type="s:string" />
+    <wsdl:part name="searchName" type="s:string" />
+    <wsdl:part name="templates" type="s:string" />
+    <wsdl:part name="userId" type="s:string" />
+    <wsdl:part name="bigclassId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBigClassBySXHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfItemModel" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByFilterHttpPostIn">
+    <wsdl:part name="searchName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByFilterHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfItemModel" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTrueNameByFilterHttpPostIn">
+    <wsdl:part name="searchName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTrueNameByFilterHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfItemModelTrueUserName" />
+  </wsdl:message>
+  <wsdl:portType name="LoginServiceSoap">
+    <wsdl:operation name="LogOut">
+      <wsdl:input message="tns:LogOutSoapIn" />
+      <wsdl:output message="tns:LogOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin">
+      <wsdl:input message="tns:CheckUserLoginSoapIn" />
+      <wsdl:output message="tns:CheckUserLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminLogin">
+      <wsdl:input message="tns:CheckAdminLoginSoapIn" />
+      <wsdl:output message="tns:CheckAdminLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsLogin">
+      <wsdl:input message="tns:CheckUserIsLoginSoapIn" />
+      <wsdl:output message="tns:CheckUserIsLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminIsLogin">
+      <wsdl:input message="tns:CheckAdminIsLoginSoapIn" />
+      <wsdl:output message="tns:CheckAdminIsLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByTemplate">
+      <wsdl:input message="tns:GetBigClassByTemplateSoapIn" />
+      <wsdl:output message="tns:GetBigClassByTemplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByS">
+      <wsdl:input message="tns:GetBigClassBySSoapIn" />
+      <wsdl:output message="tns:GetBigClassBySSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySs">
+      <wsdl:input message="tns:GetBigClassBySsSoapIn" />
+      <wsdl:output message="tns:GetBigClassBySsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySX">
+      <wsdl:input message="tns:GetBigClassBySXSoapIn" />
+      <wsdl:output message="tns:GetBigClassBySXSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByFilter">
+      <wsdl:input message="tns:GetUserByFilterSoapIn" />
+      <wsdl:output message="tns:GetUserByFilterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTrueNameByFilter">
+      <wsdl:input message="tns:GetUserTrueNameByFilterSoapIn" />
+      <wsdl:output message="tns:GetUserTrueNameByFilterSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="LoginServiceHttpGet">
+    <wsdl:operation name="LogOut">
+      <wsdl:input message="tns:LogOutHttpGetIn" />
+      <wsdl:output message="tns:LogOutHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin">
+      <wsdl:input message="tns:CheckUserLoginHttpGetIn" />
+      <wsdl:output message="tns:CheckUserLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminLogin">
+      <wsdl:input message="tns:CheckAdminLoginHttpGetIn" />
+      <wsdl:output message="tns:CheckAdminLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsLogin">
+      <wsdl:input message="tns:CheckUserIsLoginHttpGetIn" />
+      <wsdl:output message="tns:CheckUserIsLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminIsLogin">
+      <wsdl:input message="tns:CheckAdminIsLoginHttpGetIn" />
+      <wsdl:output message="tns:CheckAdminIsLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByTemplate">
+      <wsdl:input message="tns:GetBigClassByTemplateHttpGetIn" />
+      <wsdl:output message="tns:GetBigClassByTemplateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByS">
+      <wsdl:input message="tns:GetBigClassBySHttpGetIn" />
+      <wsdl:output message="tns:GetBigClassBySHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySs">
+      <wsdl:input message="tns:GetBigClassBySsHttpGetIn" />
+      <wsdl:output message="tns:GetBigClassBySsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySX">
+      <wsdl:input message="tns:GetBigClassBySXHttpGetIn" />
+      <wsdl:output message="tns:GetBigClassBySXHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByFilter">
+      <wsdl:input message="tns:GetUserByFilterHttpGetIn" />
+      <wsdl:output message="tns:GetUserByFilterHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTrueNameByFilter">
+      <wsdl:input message="tns:GetUserTrueNameByFilterHttpGetIn" />
+      <wsdl:output message="tns:GetUserTrueNameByFilterHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="LoginServiceHttpPost">
+    <wsdl:operation name="LogOut">
+      <wsdl:input message="tns:LogOutHttpPostIn" />
+      <wsdl:output message="tns:LogOutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin">
+      <wsdl:input message="tns:CheckUserLoginHttpPostIn" />
+      <wsdl:output message="tns:CheckUserLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminLogin">
+      <wsdl:input message="tns:CheckAdminLoginHttpPostIn" />
+      <wsdl:output message="tns:CheckAdminLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsLogin">
+      <wsdl:input message="tns:CheckUserIsLoginHttpPostIn" />
+      <wsdl:output message="tns:CheckUserIsLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminIsLogin">
+      <wsdl:input message="tns:CheckAdminIsLoginHttpPostIn" />
+      <wsdl:output message="tns:CheckAdminIsLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByTemplate">
+      <wsdl:input message="tns:GetBigClassByTemplateHttpPostIn" />
+      <wsdl:output message="tns:GetBigClassByTemplateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByS">
+      <wsdl:input message="tns:GetBigClassBySHttpPostIn" />
+      <wsdl:output message="tns:GetBigClassBySHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySs">
+      <wsdl:input message="tns:GetBigClassBySsHttpPostIn" />
+      <wsdl:output message="tns:GetBigClassBySsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySX">
+      <wsdl:input message="tns:GetBigClassBySXHttpPostIn" />
+      <wsdl:output message="tns:GetBigClassBySXHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByFilter">
+      <wsdl:input message="tns:GetUserByFilterHttpPostIn" />
+      <wsdl:output message="tns:GetUserByFilterHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTrueNameByFilter">
+      <wsdl:input message="tns:GetUserTrueNameByFilterHttpPostIn" />
+      <wsdl:output message="tns:GetUserTrueNameByFilterHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LoginServiceSoap" type="tns:LoginServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LogOut">
+      <soap:operation soapAction="http://tempuri.org/LogOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin">
+      <soap:operation soapAction="http://tempuri.org/CheckUserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminLogin">
+      <soap:operation soapAction="http://tempuri.org/CheckAdminLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsLogin">
+      <soap:operation soapAction="http://tempuri.org/CheckUserIsLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminIsLogin">
+      <soap:operation soapAction="http://tempuri.org/CheckAdminIsLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByTemplate">
+      <soap:operation soapAction="http://tempuri.org/GetBigClassByTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByS">
+      <soap:operation soapAction="http://tempuri.org/GetBigClassByS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySs">
+      <soap:operation soapAction="http://tempuri.org/GetBigClassBySs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySX">
+      <soap:operation soapAction="http://tempuri.org/GetBigClassBySX" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByFilter">
+      <soap:operation soapAction="http://tempuri.org/GetUserByFilter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTrueNameByFilter">
+      <soap:operation soapAction="http://tempuri.org/GetUserTrueNameByFilter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LoginServiceSoap12" type="tns:LoginServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LogOut">
+      <soap12:operation soapAction="http://tempuri.org/LogOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin">
+      <soap12:operation soapAction="http://tempuri.org/CheckUserLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminLogin">
+      <soap12:operation soapAction="http://tempuri.org/CheckAdminLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsLogin">
+      <soap12:operation soapAction="http://tempuri.org/CheckUserIsLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminIsLogin">
+      <soap12:operation soapAction="http://tempuri.org/CheckAdminIsLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByTemplate">
+      <soap12:operation soapAction="http://tempuri.org/GetBigClassByTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByS">
+      <soap12:operation soapAction="http://tempuri.org/GetBigClassByS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySs">
+      <soap12:operation soapAction="http://tempuri.org/GetBigClassBySs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySX">
+      <soap12:operation soapAction="http://tempuri.org/GetBigClassBySX" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByFilter">
+      <soap12:operation soapAction="http://tempuri.org/GetUserByFilter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTrueNameByFilter">
+      <soap12:operation soapAction="http://tempuri.org/GetUserTrueNameByFilter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LoginServiceHttpGet" type="tns:LoginServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="LogOut">
+      <http:operation location="/LogOut" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin">
+      <http:operation location="/CheckUserLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminLogin">
+      <http:operation location="/CheckAdminLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsLogin">
+      <http:operation location="/CheckUserIsLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminIsLogin">
+      <http:operation location="/CheckAdminIsLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByTemplate">
+      <http:operation location="/GetBigClassByTemplate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByS">
+      <http:operation location="/GetBigClassByS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySs">
+      <http:operation location="/GetBigClassBySs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySX">
+      <http:operation location="/GetBigClassBySX" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByFilter">
+      <http:operation location="/GetUserByFilter" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTrueNameByFilter">
+      <http:operation location="/GetUserTrueNameByFilter" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LoginServiceHttpPost" type="tns:LoginServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="LogOut">
+      <http:operation location="/LogOut" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserLogin">
+      <http:operation location="/CheckUserLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminLogin">
+      <http:operation location="/CheckAdminLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserIsLogin">
+      <http:operation location="/CheckUserIsLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAdminIsLogin">
+      <http:operation location="/CheckAdminIsLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByTemplate">
+      <http:operation location="/GetBigClassByTemplate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassByS">
+      <http:operation location="/GetBigClassByS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySs">
+      <http:operation location="/GetBigClassBySs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigClassBySX">
+      <http:operation location="/GetBigClassBySX" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByFilter">
+      <http:operation location="/GetUserByFilter" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTrueNameByFilter">
+      <http:operation location="/GetUserTrueNameByFilter" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoginService">
+    <wsdl:port name="LoginServiceSoap" binding="tns:LoginServiceSoap">
+      <soap:address location="http://www.qqhrsyzx.com/Service/LoginService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LoginServiceSoap12" binding="tns:LoginServiceSoap12">
+      <soap12:address location="http://www.qqhrsyzx.com/Service/LoginService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LoginServiceHttpGet" binding="tns:LoginServiceHttpGet">
+      <http:address location="http://www.qqhrsyzx.com/Service/LoginService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LoginServiceHttpPost" binding="tns:LoginServiceHttpPost">
+      <http:address location="http://www.qqhrsyzx.com/Service/LoginService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

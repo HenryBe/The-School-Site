@@ -1,0 +1,127 @@
+<html><head><meta http-equiv=Content-Type content='text/html; charset=utf-8'></head>
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetNewsCountByDay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NewCanlendarBigClassId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNewsCountByDayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNewsCountByDayResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetNewsCountByDaySoapIn">
+    <wsdl:part name="parameters" element="tns:GetNewsCountByDay" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsCountByDaySoapOut">
+    <wsdl:part name="parameters" element="tns:GetNewsCountByDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsCountByDayHttpGetIn">
+    <wsdl:part name="NewCanlendarBigClassId" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsCountByDayHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsCountByDayHttpPostIn">
+    <wsdl:part name="NewCanlendarBigClassId" type="s:string" />
+    <wsdl:part name="month" type="s:string" />
+    <wsdl:part name="year" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetNewsCountByDayHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="CanlendarServiceSoap">
+    <wsdl:operation name="GetNewsCountByDay">
+      <wsdl:input message="tns:GetNewsCountByDaySoapIn" />
+      <wsdl:output message="tns:GetNewsCountByDaySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CanlendarServiceHttpGet">
+    <wsdl:operation name="GetNewsCountByDay">
+      <wsdl:input message="tns:GetNewsCountByDayHttpGetIn" />
+      <wsdl:output message="tns:GetNewsCountByDayHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CanlendarServiceHttpPost">
+    <wsdl:operation name="GetNewsCountByDay">
+      <wsdl:input message="tns:GetNewsCountByDayHttpPostIn" />
+      <wsdl:output message="tns:GetNewsCountByDayHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CanlendarServiceSoap" type="tns:CanlendarServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNewsCountByDay">
+      <soap:operation soapAction="http://tempuri.org/GetNewsCountByDay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CanlendarServiceSoap12" type="tns:CanlendarServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNewsCountByDay">
+      <soap12:operation soapAction="http://tempuri.org/GetNewsCountByDay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CanlendarServiceHttpGet" type="tns:CanlendarServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetNewsCountByDay">
+      <http:operation location="/GetNewsCountByDay" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CanlendarServiceHttpPost" type="tns:CanlendarServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetNewsCountByDay">
+      <http:operation location="/GetNewsCountByDay" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CanlendarService">
+    <wsdl:port name="CanlendarServiceSoap" binding="tns:CanlendarServiceSoap">
+      <soap:address location="http://www.qqhrsyzx.com/Service/CanlendarService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CanlendarServiceSoap12" binding="tns:CanlendarServiceSoap12">
+      <soap12:address location="http://www.qqhrsyzx.com/Service/CanlendarService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CanlendarServiceHttpGet" binding="tns:CanlendarServiceHttpGet">
+      <http:address location="http://www.qqhrsyzx.com/Service/CanlendarService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CanlendarServiceHttpPost" binding="tns:CanlendarServiceHttpPost">
+      <http:address location="http://www.qqhrsyzx.com/Service/CanlendarService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,996 @@
+/*
+201301108 10:55
+*更新登录
+*优化清除浮动
+*优化图文类文字行间距
+*登录样式名修改
+*/
+
+/*=== 新闻类 ===*/
+.nsy-newsTime {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #aaa;
+}
+.nsy-newsClick {
+	color: #d90000;
+}
+.nsy-newsFlag,
+.nsy-newsNews,
+.nsy-newsHot,
+.nsy-newsHotTop {
+	height:24px;
+	vertical-align: middle;
+}
+
+.nsy-specialName {
+	display: none;
+}
+/*--- 文章列表 ---*/
+.nsy-news-ul li,
+.nsy-nav-ul li,
+.nsy-scrollUpNews-ul li,
+.nsy-latestNews-ul li,
+.nsy-newsTop li,
+.nsy-specialNewsDiv li,
+.nsy-newsSearchResult li,
+.nsy-discuss-ul li,
+.nsy-latestMessage li,
+.nsy-latestContribute-ul li,
+.nsy-webResearList-ul li {
+	line-height: 24px;
+}
+.nsy-news-ul li{
+	_height: 24px;
+}
+.nsy-news-ul li,
+.nsy-nav-ul li,
+.nsy-scrollUpNews-ul li,
+.nsy-latestNews-ul li,
+.nsy-newsTop li,
+.nsy-specialNewsDiv li,
+.nsy-newsSearchResult li,
+.nsy-discuss-ul li,
+.nsy-latestMessage li,
+.nsy-latestContribute-ul li{
+	position: relative;
+}
+.nsy-latestNews-ul li .nsy-newsListTitle,
+.nsy-news-meta,
+.nsy-nav-meta,
+.nsy-scrollUpNews-meta,
+.nsy-latestNews-meta,
+.nsy-newsTop-meta,
+.nsy-bigNews-meta,
+.nsy-specialNewsDiv-meta {
+	display: inline-block;
+ *display: inline;
+}
+/*---- 今日导读 ----*/
+.nsy-nav-ul {
+	margin-top: -10px;
+}
+/*--- 滚动公告 ---*/
+.nsy-scrollUpNews-ul .nsy-newsTime,.nsy-bigNews-meta .nsy-newsTime {
+	position: static;
+}
+/*--- 文字头条 ---*/
+.nsy-bigNews li {
+	display: inline;
+	line-height: 2;
+}
+/*--站点公告--*/
+.nsy-borad-span {
+	line-height:2;
+}
+/*---专题文章---*/
+.nsy-special span a {
+	display: block;
+	padding: 5px;
+	margin-bottom: 2px;
+	background-color: #eee;
+}
+.nsy-special span a:hover {
+	text-decoration: none;
+	background-color: #f9f9f9;
+}
+/*---最新新闻/最新投稿 ---*/
+.nsy-latestNews-lm,
+.nsy-latestContribute-lm {
+	margin-right: 5px;
+}
+/*=== 图文类 ===*/
+.nsy-latestImageNews-ul,
+.nsy-mediaNews-ul,
+.nsy-picnews1-ul,
+.nsy-people-ul,
+.nsy-picnews-ul {
+	overflow: hidden;
+}
+.nsy-latestImageNews-ul li,
+.nsy-mediaNews-ul li,
+.nsy-picnews1-ul li,
+.nsy-people-ul li,
+.nsy-picnews-ul li {
+	float: left;
+	margin:5px;
+}
+/*-- 图片 --*/
+.nsy-latestImageNews-img,
+.nsy-latestImageNews-img img,
+.nsy-mediaNews-img,
+.nsy-mediaNews-img img,
+.nsy-picnews1-img,
+.nsy-picnews1-img img,
+.nsy-picnews2-img,
+.nsy-picnews2-img img,
+.nsy-picnews-img,
+.nsy-picnews-img img,
+.nsy-scrollPicNews-img,
+.nsy-scrollPicNews-img img,
+.nsy-scrollFlashNews,
+.nsy-scrollFlashNews img,
+.nsy-people-img,
+.nsy-people-img img {
+	display: block;
+}
+/*-- 标题 --*/
+.nsy-picnews-title,
+.nsy-latestImageNews-title,
+.nsy-mediaNews-title,
+.nsy-scrollPicNews-title,
+.nsy-scrollPicNews-title,
+.nsy-picnews1Title,
+.nsy-people-ul p a {
+	display: block;
+	line-height: 2;
+	text-align: center;
+}
+/*--- 新闻视频 ---*/
+.nsy-mediaNews-title {
+	display: block;
+	width: 76%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-top: 4px;
+	text-align: left;
+	padding-left: 32px;
+	background: url(control_play.png)/*tpa=http://www.qqhrsyzx.com/Images/System/control_play.png*/ 10px center no-repeat;
+}
+.nsy-mediaNews-meta {
+	display: none;
+}
+.nsy-mediaNews-img:hover img {
+	filter: alpha(opacity=40);
+	-moz-opacity: 0.4;
+	-khtml-opacity: 0.4;
+	opacity: 0.4;
+}
+.nsy-mediaNews-img {
+	display: block;
+	background: #000 url(play_alt.png)/*tpa=http://www.qqhrsyzx.com/Images/System/play_alt.png*/ center no-repeat;
+}
+/*--- 图文介绍 ---*/
+.nsy-picnews1Title,
+.nsy-picnews2Title {
+	display: block;
+	font-weight: bold;
+	text-align: left;
+}
+.nsy-picnews1-summary,
+.nsy-picnews2-summary {
+	color: #666;
+	line-height: 1.8;
+}
+.nsy-picnews1-meta,
+.nsy-picnews2-meta {
+	display: none;
+}
+.nsy-picNews2-link {
+	color: #5981CF;
+}
+/*上下排列*/
+.nsy-picnews1-ul li {
+	text-align: left;
+}
+/*左右排列*/
+.nsy-picnews2-ul li {
+	overflow: hidden;
+	margin-bottom: 10px;
+	_zoom: 1;
+}
+.nsy-picnews2-img {
+	float: left;
+	margin-right: 10px;
+}
+.nsy-picNews2-link {
+	white-space: nowrap;
+}
+/*--- 图文信息 ---*/
+
+
+/*-- 图文滚动 --*/
+.nsy-scrollPicNews-table td ,
+.nsy-scrollPicNews-table .nsy-scrollPicNews-table td {
+	padding: 0 5px;
+}
+.nsy-rightbtn,
+.nsy-leftbtn {
+	font-size: 24px;
+	font-family:'黑体';
+	color:#bbb;
+}
+.nsy-scrollPicNews-table a:hover {
+	text-decoration: none;
+	color: #888;
+}
+/*--- 图文翻动 ---*/
+.nsy-scrollFlashNews {
+	position: relative;
+}
+.nsy-scrollFlashNews-slide a {
+	display: block;
+}
+.nsy-scrollFlashNews-title {
+	position: absolute;
+	bottom: 0;
+	z-index: 10;
+	width: 100%;
+	color: #fff;
+	background: #000;
+	filter: alpha(opacity=60);
+	-moz-opacity: 0.6;
+	-khtml-opacity: 0.6;
+	opacity: 0.6;
+}
+.nsy-scrollFlashNews-title p {
+	padding: 8px 10px;
+	width: 70%;/*按实际情况而定*/
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.nsy-scrollFlashNews .pagination {
+	position: absolute;
+	right: 5px;
+	bottom: 8px;
+	z-index: 10;
+}
+.nsy-scrollFlashNews .pagination li {
+	float: left;
+	margin-right: 2px;
+}
+.nsy-scrollFlashNews .pagination a {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	color: #fff;
+	background: #000;
+	filter: alpha(opacity=40);
+	-moz-opacity: 0.4;
+	-khtml-opacity: 0.4;
+	opacity: 0.4;
+}
+.nsy-scrollFlashNews .pagination .current a {
+	background: #ce0609;
+}
+.nsy-scrollFlashNews .pagination .current a,
+.nsy-scrollFlashNews .pagination a:hover {
+	text-decoration: none;
+	filter: alpha(opacity=70);
+	-moz-opacity: 0.7;
+	-khtml-opacity: 0.7;
+	opacity: 0.7;
+}
+/*-- 人物或事物介绍（图） --*/
+/*=== 链接类 ===*/
+/*-- 文字连接 --*/
+.nsy-letterLink {
+	overflow: hidden;
+}
+.nsy-letterLink li {
+	display: inline;
+	margin-right: 10px;
+	line-height: 2;
+}
+/*-- 文字连接组 --*/
+.nsy-linkGroup select {
+	margin-bottom: 5px;
+}
+/*-- 图片链接 --*/
+.nsy-picLink {
+	overflow: hidden;
+}
+.nsy-picLink div {
+	float: left;
+	display: inline-block;
+	margin: 5px;
+}
+/*=== 互动类 ===*/
+/*--- 留言板 ---*/
+/** 平铺 **/
+.nsy-messageBoard-container {
+	line-height: 1.8em;
+}
+.nsy-info-click,
+.nsy-info-retime,
+.nsy-post-time,
+.nsy-user-preply-time {
+	float: right;
+	color: #666;
+}
+.nsy-post-ip {
+	float: left;
+	color: #666;
+}
+.nsy-post-time,
+.nsy-post-ip,
+.nsy-user-preply-time {
+	color: #999;
+}
+.nsy-info-retime {
+	margin-right: 10px;
+}
+.nsy-user-preply {
+	padding: 3px 10px;
+	background-color: #dfdfdf;
+}
+.nsy-user-preply-content {
+	display: block;
+}
+.nsy-user-preply-id {
+	font-weight: bold;
+}
+.nsy-messageBoardTable tr {
+	border-top: 1px dashed #ccc;
+}
+.nsy-user-content {
+	border: 1px solid #eee;
+	background-color: #f3f3f3;
+}
+/** 列表 **/
+.nsy-messageBoardSelect input {
+	width: 100px;
+}
+.nsy-messageBoardSelect .nsy-select-btn {
+	width: 50px;
+	padding: 2px;
+}
+.nsy-messageBoardSearch {
+	margin-top: 10px;
+}
+.nsy-askAnswer-wyzx {
+	margin-top: 10px;
+}
+.nsy-askAnswer-w-ion,
+.nsy-askAnswer-d-ion {
+	font-weight: bold;
+}
+.nsy-askAnswer span {
+	line-height: 1.8em;
+}
+.nsy-askAnswer-w-time,
+.nsy-askAnswer-d-time {
+	color: #999;
+	margin-left: 20px;
+}
+.nsy-askAnswer-d {
+	border-bottom: 1px dashed #ddd;
+	margin: 5px 0;
+}
+.nsy-askAnswer-d-ion {
+	color: #4287CE;
+}
+.nsy-messageBoardRelease {
+	text-align: right;
+	margin: 10px 0 5px;
+}
+.nsy-release-new,
+.nsy-release-new:hover,
+.nsy-release-new:visited {
+	color: #4287CE;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.nsy-release-new:hover {
+	color: #26468b;
+}
+/*--- 最新留言 ---*/
+.nsy-latestMessage li {
+	position: relative;
+}
+.nsy-latestMessage-time {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #a9a9a9;
+}
+/*--- 问卷调查 ---*/
+.nsy-webResearList ul,
+.nsy-webResear ul,
+.nsy-webResear-option ul {
+	list-style-position: outside;
+ *list-style-position:inside;
+}
+.nsy-webResearList ul,
+.nsy-webResear ul {
+	list-style-type: decimal;
+	margin-left: 26px;
+ *margin-left:0;
+}
+.nsy-webResear .nsy-webResear-option ul {
+	list-style-type: upper-alpha;
+	margin-left: 30px;
+}
+.nsy-webResear-option input,
+.nsy-webResear-option label {
+	vertical-align: middle;
+}
+.nsy-webResear-option li input {
+	margin-right: 5px;
+}
+.nsy-webResearTitle {
+	font-weight: bold;
+}
+.nsy-webResear-ul li {
+	line-height: 2;
+}
+.nsy-webResear-ul li li {
+	line-height: 1.8;
+}
+.nsy-webResear-required {
+	color: #666;
+}
+.nsy-WebResear-btn input {
+	height:24px;
+}
+.nsy-webResear{
+	margin-bottom:10px;	
+}
+.nsy-WebResear-btn {
+	display:inline;
+	margin-right:10px;
+	*vertical-align:top;/*IE67会有上下间隙*/
+}
+/*---网站调查模板---*/
+.nsy-resear-title {
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+.nsy-resear-toupiao input {
+	margin-bottom: 6px;
+	margin-right: 4px;
+	_margin: 0;
+}
+.nsy-resear-button {
+	margin-top: 6px;
+}
+/*---投稿统计----*/
+.nsy-contributeStat-year {
+	width: 60px;
+	margin: 0 2px 0 10px;
+}
+.nsy-contributeStat-month,
+.nsy-contributeStat-btn {
+	margin-left: 10px;
+}
+.nsy-contributeStat-message {
+	display: block;
+	font-weight: bold;
+	text-align: center;
+	margin: 15px 0 10px;
+}
+.nsy-contributeStat-table,
+.nsy-contributeStat-table tr,
+.nsy-contributeStat-table td,
+.nsy-contributeTop,
+.nsy-contributeTop tr,
+.nsy-contributeTop td {
+	border: 1px solid #ddd;
+	padding: 3px 5px;
+}
+.nsy-contributeStat-title,
+.nsy-contributeTop-title {
+	background-color: #F2F2F4;
+}
+.nsy-contributeStat-table {
+	margin-bottom: 8px;
+}
+.pagefont {
+	color: #c22b02;
+}
+
+/*=== 功能类 ===*/
+/*-- 登录 --*/
+input:-webkit-autofill {
+-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.nsy-login-nologin label,
+.nsy-adminLogin label {
+	float: left;
+	width: 4em;
+	padding-top: 3px;
+	text-align: right;
+}
+.nsy-login-username,
+.nsy-login-verify,
+.nsy-login-pwd {
+	clear: left;
+	margin-bottom: 5px;
+}
+.nsy-login-nologin div div,
+.nsy-login-username div div {
+	margin-left: 4em;
+}
+.nsy-login-verify input {
+	width: 46px;
+	margin-right: 3px;
+	padding: 3px;
+}
+.nsy-login-username input,
+.nsy-login-pwd input,
+.nsy-itemReview-uname,
+.nsy-itemReview-pwd,
+.nsy-itemReview-verify {
+	width: 112px;
+	padding: 3px;
+	border: 1px solid #aaa;
+}
+.nsy-login-verify img {
+	vertical-align: middle;
+}
+.nsy-loginhorizontal .nsy-login-verify img {
+	margin-right: 5px;
+}
+.nsy-login-btn,
+.nsy-login-reg,
+.nsy-adminLogin-btn {
+	float: left;
+	width:45px;
+	margin-right: 5px;
+	font-size: 14px;
+}
+.nsy-login-for {
+	clear: both;
+	color: #999;
+	text-decoration: underline;
+	line-height: 24px;
+}
+
+.nsy-login-reg,
+.nsy-login-for {
+	display: none;
+}
+.nsy-login-error {
+	color: #F90;
+	clear: both;
+}
+.nsy-login-islogin {
+	text-align: center;
+	line-height: 2;
+}
+.nsy-login-islogin a,
+.nsy-loginhorizontal-islogin a {
+	color: #4A97E3;
+	text-decoration: underline;
+}
+/*--横向登录----*/
+.nsy-loginhorizontal .nsy-login-username,
+.nsy-loginhorizontal .nsy-login-pwd,
+.nsy-loginhorizontal .nsy-login-verify,
+.nsy-loginhorizontal .nsy-login-group,
+.nsy-loginhorizontal label {
+	float: left;
+	clear: none;
+}
+.nsy-loginhorizontal-nologin div div {
+	display: inline-block;
+}
+.nsy-loginhorizontal .nsy-login-username input,
+.nsy-loginhorizontal .nsy-login-pwd input {
+	width: 96px;
+ *width:86px;
+	margin-right: 5px;
+}
+.verifyCodeImg,
+.nsy-adminLogin-verifyimg {
+	margin-top: -3px;
+}
+.nsy-loginhorizontal-login p {
+	float: left;
+	text-indent: 0;
+}
+.nsy-loginhorizontal-login a {
+	float: right;
+	margin-left: 12px;
+	color: #666;
+	text-decoration: underline;
+}
+.nsy-loginhorizontal-islogin p {
+	display: inline-block;
+}
+/*---评论----*/
+.nsy-itemReview-input,
+.nsy-reviewInput {
+	height: 70px;
+	margin-bottom: 5px;
+	outline: none;
+}
+.nsy-itemReview-title span {
+	color: #4287CE;
+	font-weight: bold;
+}
+.nsy-itemReview-title {
+	float: right;
+}
+.nsy-itemReview-nologin input {
+	margin-right: 3px;
+	padding-left: 3px;
+}
+.nsy-itemReview-verify,
+#VerifyCode {
+	width: 3em;
+}
+.nsy-itemReview-nologin img,
+.nsy-reviewRelease img {
+	vertical-align: middle;
+}
+.nsy-reviewRelease,
+.nsy-itemReview-input,
+.nsy-reviewInput {
+	position: relative;
+	width: 100%;
+}
+.nsy-itemReview-release,
+.nsy-reviewBtn a {
+	position: absolute;
+	right: -6px;
+	top: 0;
+}
+.nsy-explain,
+.nsy-reviewContentIp,
+.nsy-reviewPostTime {
+	color: #999;
+}
+.nsy-itemReview-nologin span,
+.nsy-itemReview-textarea-bg {
+	position: relative;
+}
+.nsy-itemReview-textarea-bg {
+	clear: right;
+	width: 100%;
+	height: 76px;
+	margin-bottom: 10px;
+	border: 1px solid #DBDBDB;
+	background: white url(bg_textarea.png)/*tpa=http://www.qqhrsyzx.com/Images/System/bg_textarea.png*/ repeat-x 0 top;
+}
+.nsy-itemReview-textarea-bg textarea {
+	width: 98%;
+	margin-top: 2px;
+	margin-left: 2px;
+	border: none;
+	outline: none;
+	resize: none;
+}
+.nsy-account,
+.nsy-password,
+.nsy-verify {
+	display: block;
+	float: left;
+	width: 122px;
+	height: 22px;
+}
+.nsy-itemReview-nologin .verifyCodeImg {
+	position: absolute;
+	left: 50px;
+	top: 2px;
+}
+.nsy-itemReview-nologin label,
+.nsy-itemReview-textarea-bg span {
+	margin-left: 4px;
+	line-height: 22px;
+	z-index: 1;
+	color: #999;
+}
+.nsy-itemReview-nologin input,
+.nsy-itemReview-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	background-color: transparent;
+}
+/*评论详情*/
+.nsy-reviewShow h3,
+.nsy-correlationTitle {
+	margin-top: 20px;
+	border-bottom: 1px solid #eee;
+}
+.nsy-correlationTitle {
+	font-size: 1.17em;
+	display: block;
+	font-weight: bold;
+}
+.nsy-reviewUserFace {
+	display: block;
+	width: 50px;
+	float: left;
+}
+.nsy-reviewReply:hover {
+	background-color: #fbfbfb;
+}
+.nsy-reviewUserFace img {
+	display: block;
+	width: 40px;
+	border: 1px solid #DDD;
+	padding: 1px;
+}
+.nsy-reviewPostTime {
+	float: right;
+}
+.nsy-reviewBody {
+	min-height: 28px;
+	_height: 28px;
+}
+.nsy-reviewPagination {
+	clear: both;
+}
+.nsy-reviewInnerFace {
+	border-bottom: 1px dashed #DDD;
+	padding: 10px 0;
+}
+.nsy-reviewPagination {
+	margin-top: -1px;
+	padding: 5px 0;
+	border-top: 1px solid #eee;
+}
+.nsy-reviewPagination a[disabled] {
+	color: #999;
+	cursor: default;
+}
+.nsy-reviewPagination a:hover {
+	text-decoration: none;
+}
+/*-- 主题讨论 --*/
+.nsy-discussreview-subject {
+	border-bottom: 1px dashed #dfdfdf;
+}
+.nsy-discussReview-reviewinfo h3 {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 6px;
+}
+.nsy-discussReview-release-title {
+	font-weight: bold;
+}
+.nsy-subject-userphoto img {
+	display: block;
+	width: 80px;
+}
+.nsy-subject-num {
+	font-size: 12px;
+	font-weight: bold;
+	color: #4287CE;
+	margin-right: 5px;
+}
+.nsy-subject-gray,
+.nsy-discussReview-release-explain,
+.nsy-subject-username,
+.nsy-subject-ipaddress {
+	color: #666;
+}
+.nsy-subject-left {
+	width: 130px;
+}
+.nsy-review-check {
+	vertical-align: middle;
+}
+.nsy-subject-right {
+	padding-top: 20px;
+	vertical-align: text-top;
+}
+.nsy-discussReview-release-content,
+.nsy-discussReview-pages,
+.nsy-discussReview-release-btn {
+	margin: 6px 0;
+}
+/*-- 网站搜索 --*/
+.nsy-search-newstype {
+	width: 102px;
+}
+.nsy-search-type {
+	width: 70px;
+}
+.nsy-search select {
+	margin-bottom: 5px;
+}
+/*--文章统计--*/
+.nsy-articleStatistics {
+	color: red;
+}
+/*-- 信息查询 --*/
+.nsy-infoSearch-container {
+	margin: 5px 0;
+}
+/*-- 栏目列表 --*/
+.nsy-columnList td {
+	line-height: 0 !important;
+}
+.nsy-columnList img {
+	display: block;
+}
+.nsy-columnList td div,
+.nsy-columnList td a {
+	height: 20px !important;
+	line-height: 20px !important;
+}
+/*=== 其他类 ===*/
+/*----- 新闻 ----*/
+.nsy-newsReleasetime,
+.nsy-newsFrom,
+.nsy-newsAuthor,
+.nsy-setfont {
+	color: #999;
+}
+.nsy-newsReleasetime em,
+.nsy-newsAuthor em,
+.nsy-newsFrom em,
+.nsy-newsClick em {
+	margin-left: 20px;
+	font-style: normal;
+}
+ h1.nsy-newsTitle{
+	text-align: center;
+	font-family: "微软雅黑" "黑体";
+	margin:0 auto;
+	font-size:20px;
+}
+.nsy-newsContent {
+	text-align: left;
+	font-size: 14px;
+	line-height: 1.8;
+	margin:0 auto;
+}
+/*----页码----*/
+.nsy-paging {
+	margin-top: 10px;
+	height: 35px;
+}
+.nsy-pageNav span,
+.nsy-pageNav a {
+	float: left;
+	display: inline;
+	margin-left: 4px;
+	padding: 0 8px;
+	height: 22px;
+	line-height: 22px;
+	border: 1px solid #eee;
+	color: #333;
+	overflow: hidden;
+	text-decoration: none;
+}
+.nsy-pageNav .nsy-num {
+	color: #666;
+	background-color: #f6f6f6;
+}
+.nsy-pageNav a:hover {
+	border-color: #ddd;
+	color: #999;
+}
+.nsy-pageSummary,
+.nsy-pageJump {
+	display: none;
+	margin-left: 5px;
+}
+.nsy-inpuTxt {
+	width: 20px;
+}
+.nsy-newsUpDown a {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 25px;
+	margin: 2px 10px;
+	border: 1px solid #DDD;
+	text-align: center;
+}
+.nsy-Split {
+	display: none;
+}
+.nsy-newsUpDown a:hover {
+	border-color: #999;
+	text-decoration: none;
+}
+/*-- btn --*/
+/*蓝色按钮*/
+.nsy-resear-button input,
+.nsy-select-btn,
+.nsy-search-btn,
+.nsy-askAnswer-wyzx a,
+.nsy-WebResear-voteviewpole,
+.nsy-contributeStat-btn,
+.nsy-infoSearch-okbtn,
+.nsy-infoSearch-bzbtn,
+.nsy-itemReview-release a,
+#lblogin,
+.nsy-reviewBtn a,
+.nsy-itemReview-login-btn,
+.nsy-signup-btn,
+.nsy-WebResear-submit,
+#ViewPole,
+.nsy-discussReview-release-btn input,
+.nsy-login-btn,
+.nsy-adminLogin-btn,
+.nsy-itemReview-login-btn{
+	display: inline-block;
+	color: #fff;
+	padding: 2px 8px;
+	text-align: center;
+	border: 1px solid #4287CE;
+	background-color: #4A97E3;
+	cursor: pointer;
+}
+.nsy-resear-button input:hover,
+.nsy-select-btn:hover,
+.nsy-search-btn:hover,
+.nsy-askAnswer-wyzx a:hover,
+.nsy-WebResear-voteviewpole:hover,
+.nsy-contributeStat-btn:hover,
+.nsy-infoSearch-okbtn:hover,
+.nsy-infoSearch-bzbtn:hover,
+.nsy-itemReview-release a:hover,
+.nsy-itemReview-login-btn:hover,
+.nsy-signup-btn:hover,
+.nsy-WebResear-submit:hover,
+#ViewPole:hover,
+.nsy-login-btn:hover,
+.nsy-login-reg:hover,
+.nsy-adminLogin-btn:hover {
+	text-decoration: none;
+	background-color: #4287CE;
+}
+/*橙色按钮*/
+.nsy-login-reg {
+	background: #F90;
+}
+
+/*自定义表单*/
+.nsy-signup-table {
+	font-size: 14px;
+	color: #555;
+}
+.nsy-signup-table textarea,
+.nsy-signup-table select,
+.nsy-signup-table input {
+	padding: 4px;
+	border: 1px solid #d1d2d6;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	border-radius: 2px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+.nsy-signup-table input {
+	width: 208px;
+}
+.nsy-signup-table select {
+	width: 218px;
+	_width: 208px;
+	color: #555;
+}
+.nsy-signup-table select option {
+	line-height:26px;
+}
+.nsy-signup-table textarea {
+	width: 366px;
+	resize: none;
+}
+/*浮动框*/
+#divx0{
+	z-index:99999;
+}
