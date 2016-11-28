@@ -136,12 +136,14 @@ pre {
 table {
   width:100%;
   border-collapse:collapse;
+  border:1px solid black;
 }
 
 th, td {
   text-align:left;
   padding:5px 10px;
-  border-bottom:1px solid #e5e5e5;
+  border-bottom:1px solid black;
+  border-right:1px solid black;
 }
 
 dt {
